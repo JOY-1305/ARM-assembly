@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Jyotirmay Panwar",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -26.67,
+      "left": -48.67,
+      "attrs": { "env": "arduino-community" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 196.29,
+      "left": -30.31,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -3.04,
+      "left": 88.35,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:3V3", "r1:2", "green", [ "h38.69", "v-53.22", "h79.33" ] ],
+    [ "pico:GP21", "btn1:2.r", "green", [ "h60.02", "v-0.96" ] ],
+    [ "pico:GP21", "r1:1", "green", [ "h0" ] ],
+    [ "pico:GND.6", "btn1:1.r", "black", [ "h73.36", "v102.64", "h-0.67" ] ]
+  ]
+}
